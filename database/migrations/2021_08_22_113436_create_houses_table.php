@@ -24,6 +24,7 @@ class CreateHousesTable extends Migration
             $table->string('slug')->unique();
             $table->integer('price')->default(0)->unsigned();
             $table->integer('area')->default(0)->unsigned();
+            $table->integer('sort')->default(0)->unsigned();
             $table->enum('status', [0, 1])->default(1);
             $table->timestamps();
         });

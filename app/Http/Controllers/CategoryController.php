@@ -18,8 +18,6 @@ class CategoryController extends Controller
     public function index(ProductFilter $request)
     {
         //Все проекты с фильтрацией
-//         echo '<pre>';
-// print_r($request);
         $categories = category::orderBy('title')->get();
         $houses = house::filter($request)->paginate(4);
 
