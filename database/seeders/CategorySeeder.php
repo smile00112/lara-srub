@@ -17,8 +17,8 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        for( $i =0; $i < 6; $i++ ){
-            $name =  Str::random(1) . '_'. Arr::random($this->category_names);
+        foreach( $this->category_names as $cat ){
+            $name =  Str::random(1) . '_'. $cat;
             $slug = Str::slug($name, '-');
             DB::table('categories')->insert([
                 'title' => $name,

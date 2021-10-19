@@ -18,4 +18,11 @@ class house extends Model
     public function scopeFilter(Builder $builder, QueryFilter $filter){
         $filter->apply($builder);
     }
+
+    public function attributes()
+    {
+        $attributes = $this->belongsToMany(attribute::class)->withPivot('value')->as('attribute_value');
+
+        return $attributes;
+    }
 }
